@@ -2,6 +2,7 @@ from tensorflow.keras.datasets import imdb
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
+import streamlit as st
 
 # Load the IMDB dataset with word_index and reverse_word_index
 word_index = imdb.get_word_index()
@@ -31,7 +32,6 @@ def predict_sentiment(review):
 
     return sentiment, prediction[0][0]
 
-import streamlit as st
 # streamlit app 
 st.title('IMDB Movie Review Sentiment Analysis')
 st.write('Enter a movie review to classify it as positive or negative.')
